@@ -7,6 +7,9 @@ const PORT = process.env.PORT || 30012;
 
 connectToDatabase();
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.use('/api/v1/bookings', routes);
 
 app.listen(PORT, () => {
